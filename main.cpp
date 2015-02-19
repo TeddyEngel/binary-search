@@ -40,7 +40,6 @@ int RecursiveBinarySearch(const int& needle, const std::vector<int>& haystack, c
     if (length == 1 && haystack[start] == needle)
     {
         position = start;
-        printf("Found position with length 1: %d!\n", start);
     }
     else if (length > 1)
     {
@@ -48,17 +47,14 @@ int RecursiveBinarySearch(const int& needle, const std::vector<int>& haystack, c
 
         if (haystack[middle] > needle)
         {
-            printf("Going down left\n");
             position = RecursiveBinarySearch(needle, haystack, start, middle);
         }
         else if (haystack[middle] < needle)
         {
-            printf("Going down right\n");
             position = RecursiveBinarySearch(needle, haystack, middle, end);
         }
         else
         {
-            printf("Found position: %d!\n", middle);
             position = middle;
         }
     }
